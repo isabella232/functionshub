@@ -1,4 +1,6 @@
-oc -n zhaw-test1 process -f functionhub-template.yaml | oc -n zhaw-test1 create -f -
+NS=zhaw-prod-demos
+
+oc -n $NS process -f functionhub-template.yaml | oc -n $NS create -f -
 
 # + login to start nginx -> get correct container instance id first (should use while loop)
 instance=`oc get pods | grep snafu-control | grep -v deploy | awk '{print $1}'`
