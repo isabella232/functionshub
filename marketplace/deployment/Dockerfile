@@ -5,7 +5,7 @@
 
 FROM jszhaw/snafu
 
-RUN apt-get install -y nginx-light inotify-tools
+RUN apt-get update && apt-get install -y nginx-light inotify-tools
 
 COPY app /var/www/html/
 COPY generator /opt/generator/
